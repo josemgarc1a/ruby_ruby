@@ -7,9 +7,10 @@ module Port
 
   def self.get_terminal(ship_identifier)
     content = ship_identifier&.to_s.slice(0,3).upcase
-    if content=="OIL" or content=="GAS"
+    case content
+    when "OIL", "GAS" 
       :A
-    else
+    else 
       :B
     end
   end
